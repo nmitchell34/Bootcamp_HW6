@@ -1,0 +1,28 @@
+.page-header{
+    text-align: center;
+    color:white;
+    background-color: rgb(52, 59, 59);
+    padding: 10px;
+}
+#searchBar{
+    width: 60%;
+    height:100%;
+    margin-left: 10px;
+}
+#searchSubBtn{
+        width: 10%;;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+     
+}
+label{
+    font-weight: bold;
+    font-size: larger;
+}
+body{
+    background-color: rgb(235, 235, 235);
+}
