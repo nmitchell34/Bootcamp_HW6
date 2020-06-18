@@ -28,36 +28,31 @@
     <div class="page-header text-center">
       <span class="h1">Weather Dashboard</span>
     </div>
-    <div class="col-sm-4">
-      <form>
-        <div class="form-group">
-          <label for="searchBar">Search for a City:</label>
-          <div class="row">
-            <input
-              type="text"
-              class="form-control"
-              id="searchBar"
-              placeholder="Enter City Here"
-            />
-            <button type="submit" id="searchSubBtn">
-              <i class="fa fa-search"></i>
-            </button>
+    <div class="row">
+      <div class="col-sm-4">
+        <form>
+          <div class="form-group">
+            <label for="searchBar">Search for a City:</label>
+            <div class="row">
+              <input
+                type="text"
+                class="form-control"
+                id="searchBar"
+                placeholder="Enter City Here"
+              />
+              <button type="submit" id="searchSubBtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
-      <div id = "cityLog">
-
+        </form>
+        <div id="cityLog"></div>
+      </div>
+      <div class="col-sm-8" id="weatherInfo">
+        <div class="row" id="cityCurrent"></div>
+        <div class="row" id="fiveDay"></div>
       </div>
     </div>
-    <div class = "col-sm-8">
-        <div class="row" id="cityCurrent">
-
-        </div>
-        <div class='row' id="fiveDay">
-            
-        </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
