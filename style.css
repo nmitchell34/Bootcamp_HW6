@@ -1,0 +1,62 @@
+.page-header{
+    text-align: center;
+    color:white;
+    background-color: rgb(52, 59, 59);
+    padding: 10px;
+}
+#searchBar{
+    width: 60%;
+    height:100%;
+    margin-left: 10px;
+}
+#searchSubBtn{
+        width: 10%;;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+     
+}
+label{
+    font-weight: bold;
+    font-size: larger;
+}
+body{
+    background-color: rgb(235, 235, 235);
+}
+#weatherInfo{
+    visibility: hidden;
+    
+}
+#cityCurrent{
+    background-color: white;
+    margin-top: 10px;
+}
+#currentWeather{
+    line-height: 2rem;
+}
+#fiveDay{
+    margin-top:30px;
+}
+.card-body{
+    padding:0;
+
+}
+#cardHead{
+    margin-top: 10px;
+}
+.col-sm-4{
+    margin-right: 0;
+}
+.card{
+    size: 100%;
+    margin-right: 10px;
+    background-color: rgb(26, 106, 211);
+    color: white;
+}
+#UVIndex{
+    color: white;
+
+}
