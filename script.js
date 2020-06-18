@@ -50,13 +50,13 @@ $("#searchSubBtn").on("click", function (event) {
 function getWeather() {
  
   var currentQueryURL =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     citySearch +
     "&appid=18a8feef5d0c615b7e0d94298dc9dfbe";
   // May need to pull coords from other responses to get the UV Index (search by coords)
 
   var fiveDayURL =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     citySearch +
     "&appid=18a8feef5d0c615b7e0d94298dc9dfbe";
   // TODAY's WEATHER
@@ -73,7 +73,7 @@ function getWeather() {
     latitude = response.coord.lat;
     longitude = response.coord.lon;
     UVIndURL =
-      "http://api.openweathermap.org/data/2.5/uvi?appid=18a8feef5d0c615b7e0d94298dc9dfbe&lat=" +
+      "https://api.openweathermap.org/data/2.5/uvi?appid=18a8feef5d0c615b7e0d94298dc9dfbe&lat=" +
       latitude +
       "&lon=" +
       longitude;
@@ -110,7 +110,7 @@ function getWeather() {
           cityName +
           " (" +
           dateConvert +
-          ") <img id='wicon' src='http://openweathermap.org/img/w/" +
+          ") <img id='wicon' src='https://openweathermap.org/img/w/" +
           response.weather[0].icon +
           ".png' alt = 'weather icon'></h2>"
       );
@@ -154,7 +154,7 @@ function getWeather() {
         "<h5 class='card-title' id = 'cardHead'>" + finalDate + "</h5>"
       );
       var imgDiv = $(
-        "<div id = 'icon'><img id='wicon' src='http://openweathermap.org/img/w/" +
+        "<div id = 'icon'><img id='wicon' src='https://openweathermap.org/img/w/" +
           responseForecast.list[i * 8 + 4].weather[0].icon +
           ".png' alt = 'weather icon'></div>"
       );
