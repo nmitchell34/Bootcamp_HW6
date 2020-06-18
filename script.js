@@ -9,10 +9,33 @@ var cityStorage;
 
 if (JSON.parse(localStorage.getItem("cityArray") !== null)) {
   cityStorage = JSON.parse(localStorage.getItem("cityArray"));
+  $("#cityCurrent").html("");
+  $("#fiveDay").html("");
+  for (i = 0; i < cityStorage.length; i++) {
+    var cityDiv = $("<div>");
+    cityDiv.append(
+      "<button type='button' id='cityBtn' class='btn btn-light' value='" +
+        cityStorage[i] +
+        "'>" +
+        cityStorage[i] +
+        "</button>"
+    );
+    $("#cityLog").prepend(cityDiv);
+    citySearch=cityStorage[cityStorage.length-1]
+    getWeather()
+  }
 } else {
-  cityStorage=[]
-  localStorage.setItem("cityArray", cityStorage);
+  cityStorage = [];
+  localStorage.setItem("cityArray", JSON.stringify(cityStorage));
 }
+
+$("#cityLog").on("click", function () {
+  $("#cityCurrent").html("");
+  $("#fiveDay").html("");
+  citySearch = $(this).attr("value");
+  console.log(citySearch)
+  getWeather();
+});
 
 $("#searchSubBtn").on("click", function (event) {
   $("#cityCurrent").html("");
@@ -25,6 +48,7 @@ $("#searchSubBtn").on("click", function (event) {
 });
 
 function getWeather() {
+ 
   var currentQueryURL =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     citySearch +
@@ -58,8 +82,18 @@ function getWeather() {
     todayWS = response.wind.speed;
     UVInd;
     cityName = response.name;
+
     cityStorage.push(response.name);
-    
+    localStorage.setItem("cityArray", JSON.stringify(cityStorage));
+    var cityDiv = $("<div>");
+    cityDiv.append(
+      "<button type='button' id='cityBtn' class='btn btn-light' value='" +
+        response.name +
+        "'>" +
+        response.name +
+        "</button>"
+    );
+    $("#cityLog").prepend(cityDiv);
     $.ajax({
       url: UVIndURL,
       method: "GET",
